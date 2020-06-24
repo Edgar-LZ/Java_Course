@@ -1,13 +1,13 @@
 package binaryconversion;
+import java.lang.StringBuilder;
 
 public class DecimalToBinary {
 	public String convert(int decimal) {
-		String binary = "";
+		StringBuilder binary = new StringBuilder();
 		while(decimal > 0) {
-			int remainder = decimal%2; 
+			binary.append(decimal%2); 
 			decimal /=2;
-			binary = Integer.toString(remainder)+binary;
 		}
-		return binary;
+		return binary.toString();
 	}
 }
