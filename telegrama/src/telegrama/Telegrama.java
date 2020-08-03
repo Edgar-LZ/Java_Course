@@ -2,7 +2,7 @@ package telegrama;
 
 public class Telegrama {
 	public static void main(String[] args) {
-		String msg = "Feliz aniversario 2!";
+		String msg = "Feliz aniversario!";
 		char[] chars = msg.toCharArray();
 		int price = 0;
 		for(char c : chars) {
