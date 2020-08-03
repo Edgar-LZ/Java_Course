@@ -7,7 +7,7 @@ public class Anagram {
 
 
 	public boolean isAnagram(String str1, String str2) {
-		if(str1.length() != str2.length())
+		if(str1.replaceAll("\\s", "").length() != str2.replaceAll("\\s", "").length())
 			return false;
 		Map<Character, Integer> map1 = new HashMap<Character, Integer>();
 		Map<Character, Integer> map2 = new HashMap<Character, Integer>();
