@@ -1,6 +1,7 @@
 package telegrama;
 
 public class Telegrama {
+
 	public static void main(String[] args) {
 		String msg = "Feliz aniversario!";
 		char[] chars = msg.toCharArray();
@@ -11,12 +12,12 @@ public class Telegrama {
 			} else if((c >= 'a' && c <= 'z') || (c >=  'A' && c <=  'Z')) {
 				price +=10;
 			}
-			else if(c == ' ');
-			else {
+			else if(c != ' '){
 				price+=30;
 			}
 		}
 		System.out.println(price);
-		
+
 	}
+
 }
