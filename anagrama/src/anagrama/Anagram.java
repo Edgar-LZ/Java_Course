@@ -6,7 +6,7 @@ public class Anagram {
 
 
 	public boolean isAnagram(String str1, String str2) {
-		char[] charsWord1 = str1.replaceAll("[^A-Za-z]", "").toLowerCase().toCharArray();;
+		char[] charsWord1 = str1.replaceAll("[^A-Za-z]", "").toLowerCase().toCharArray();
 		char[] charsWord2 = str2.replaceAll("[^A-Za-z]", "").toLowerCase().toCharArray();
 
 		if(charsWord1.length != charsWord2.length)
