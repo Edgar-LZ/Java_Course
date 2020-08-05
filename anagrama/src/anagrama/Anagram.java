@@ -1,34 +1,30 @@
 package anagrama;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 public class Anagram {
 
 
 	public boolean isAnagram(String str1, String str2) {
-		str1 = str1.replaceAll("\\s", "");
-		str2 = str2.replaceAll("\\s", "");
-		if(str1.length() != str2.length())
+		char[] charsWord1 = str1.replaceAll("[^A-Za-z]", "").toLowerCase().toCharArray();;
+		char[] charsWord2 = str2.replaceAll("[^A-Za-z]", "").toLowerCase().toCharArray();
+
+		if(charsWord1.length != charsWord2.length)
 			return false;
-		Map<Character, Integer> map1 = new HashMap<Character, Integer>();
-		Map<Character, Integer> map2 = new HashMap<Character, Integer>();
-		char[] arr1 = str1.toLowerCase().toCharArray();
-		char[] arr2 = str2.toLowerCase().toCharArray();
-		for(char c: arr1 ) {
-			if(map1.get(c)== null)
-				map1.put(c,0);
-			map1.replace(c, map1.get(c)+1);
+
+		int[] countChars1 = new int['z'-'a'+1];//+1 Incluye la letra ñ
+		int[] countChars2 = new int['z'-'a'+1];
+		for(int i=0;i < charsWord1.length;i++) {
+			if(charsWord1[i] == 'ñ')
+				countChars1[-1]++;
+			else
+				countChars1[charsWord1[i]-'a']++;
+			if(charsWord1[i] == 'ñ')
+				countChars2[-1]++;
+			else
+				countChars2[charsWord2[i]-'a']++;
 		}
-		for(char c: arr2 ) {
-			if(map2.get(c)== null)
-				map2.put(c,0);
-			map2.replace(c, map2.get(c)+1);
-		}
-		if(map1.equals(map2))
-			return true;
-		return false;
-		
+		return Arrays.equals(countChars1, countChars2);
 	}
 	
 }
